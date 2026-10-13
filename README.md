@@ -1,42 +1,21 @@
-# 🌟 Sonam Saini — Developer Portfolio
+# Routes
 
-Welcome to the repository for my official personal developer portfolio! This website showcases my journey, projects, tech stack, and visual design work as a **B.Tech Computer Science & Cyber Security student**.
+TanStack Start uses **file-based routing**. Every `.tsx` file in this directory
+defines a route. Do **not** create `src/pages/`, `src/routes/_app/index.tsx`, or
+`app/layout.tsx` — those are Next.js / Remix conventions. The only root layout
+is `src/routes/__root.tsx`.
 
-🚀 **Live Website:** [https://soni-glow-folio.lovable.app/](https://soni-glow-folio.lovable.app/)
+## Conventions
 
----
+| File | URL |
+| --- | --- |
+| `index.tsx` | `/` |
+| `about.tsx` | `/about` |
+| `users/index.tsx` | `/users` |
+| `users/$id.tsx` | `/users/:id` (dynamic — bare `$`, no curly braces) |
+| `posts/{-$category}.tsx` | `/posts/:category?` (optional segment) |
+| `files/$.tsx` | `/files/*` (splat — read via `_splat` param, never `*`) |
+| `_layout.tsx` | layout route (renders children via `<Outlet />`) |
+| `__root.tsx` | app shell — wraps every page; preserve `<Outlet />` |
 
-## 📌 About The Project
-
-This portfolio is built to bridge core technical development (C++, Cyber Security, Web Dev) with creative visual communications (Canva, Presentation Decks, Infographics). Designed with a modern dark theme, glassmorphism UI elements, and sleek accent glowing borders.
-
-### 🛠️ Tech Stack & Skills Highlighted
-
-* **Core Programming:** C++
-* **Web Development:** HTML5, CSS3, JavaScript
-* **Visual & Design:** Canva, Technical Presentation Decks, Infographics
-* **Tools & Workflow:** Git, GitHub, Linux Terminal
-
----
-
-## ✨ Features
-
-- **Responsive Hero Section:** Clean introduction featuring professional branding and quick-access social links.
-- **Toolkit & Skills Grid:** Interactive grid highlighting programming, web development, and design tools.
-- **Featured Projects:** Showcase of coding repositories and visual decks with direct GitHub links.
-- **Services & Collaboration:** Overview of custom web development and visual design capabilities.
-- **Direct Contact & Connect:** Seamless links to LinkedIn, GitHub, and email options.
-
----
-
-## 🔗 Connect With Me
-
-* **Website:** [soni-glow-folio.lovable.app](https://soni-glow-folio.lovable.app/)
-* **LinkedIn:** [Sonam Saini](https://www.linkedin.com/in/sonam-saini-815026424/)
-* **GitHub:** [@sainisonam384-coder](https://github.com/sainisonam384-coder)
-
----
-
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+`routeTree.gen.ts` is auto-generated. Don't edit it by hand.
